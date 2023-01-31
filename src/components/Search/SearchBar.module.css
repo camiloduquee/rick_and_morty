@@ -1,0 +1,31 @@
+input {
+  border: 2px solid black;
+  border-radius: 12px;
+  padding: 2px 15px;
+  width: 120px;
+  margin: 4px;
+}
+.button {
+  border-radius: 30px;
+  color: white;
+  padding: 2px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  margin: 4px;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border: 2px;
+}
+.button {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+}
+.button:hover {
+  background-color: #4CAF50;
+  color: white;
+}

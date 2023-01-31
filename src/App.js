@@ -1,35 +1,26 @@
-import './App.css'
-import Card from './components/Card.jsx'
-import Cards from './components/Cards.jsx'
-import SearchBar from './components/SearchBar.jsx'
-import characters, { Rick } from './data.js'
+import './App.css';
+import Cards from './components/Cards.jsx';
+import Nav from './components/Nav/Nav.jsx';
+import { useState } from 'react';
 
 function App () {
+  
+  const example = {
+    name: 'Morty Smith',
+    species: 'Human',
+    gender: 'Male',
+    image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
+ };
+
+  const [characters, setCharacters] = useState();
+
   return (
-    <div className='App' style={{ padding: '25px' }}>
-      <div>
-        <Card
-          name={Rick.name}
-          species={Rick.species}
-          gender={Rick.gender}
-          image={Rick.image}
-          onClose={() => window.alert('Emulamos que se cierra la card')}
-        />
-      </div>
-      <hr />
-      <div>
-        <Cards
-          characters={characters}
-        />
-      </div>
-      <hr />
-      <div>
-        <SearchBar
-          onSearch={(characterID) => window.alert(characterID)}
-        />
-      </div>
+    <div className='App'>
+        <Nav/>
+        <Cards characters={characters}/>
+
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
