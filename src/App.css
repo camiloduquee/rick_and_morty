@@ -1,8 +1,12 @@
 .App {
    text-align: center;
    padding: 25px;
-   background-image: url('./img/fondo.jpg');
-   background-repeat: no-repeat;
-   background-attachment: fixed;
-   background-size: cover;
 }
+@font-face {
+   font-family:PurpleSmile;
+   src: url(../assets/fonts/PurpleSmile.ttf);
+ }
+ @font-face {
+   font-family:TituloRick;
+   src: url(../assets/fonts/rickyFont.ttf);
+ }

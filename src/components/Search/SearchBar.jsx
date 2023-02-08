@@ -1,9 +1,19 @@
-import style from './SearchBar.module.css'
+import style from "./SearchBar.module.css";
+import { useState } from "react";
 function SearchBar(props) {
+   const [character, setCharacter] = useState(0);
+
+   const handleSearch = (evento)=>{
+      let {value} = evento.target;
+      setCharacter(value);
+   };
+
+
    return (
       <>
-         <input type='search' />
-         <button className={style.button} onClick={props.onSearch}>Agregar</button> 
+         <input type='search' name='search' onChange={handleSearch}/>
+         <button className={style.button} onClick={() => props.onSearch(character)}>Agregar</button>
+         <button className={style.button} onClick={props.random}>A</button> 
       </>
    );
 }
