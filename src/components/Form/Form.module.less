@@ -18,9 +18,11 @@
   color: #fff;
   text-align: center;
 }
+
 .loginBox .userBox {
   position: relative;
 }
+
 .loginBox .userBox .input {
   width: 100%;
   padding: 10px 0;
@@ -34,40 +36,51 @@
 }
 .loginBox .userBox .label {
   position: absolute;
-  top: 0;
+  top:0;
   left: 0;
   padding: 10px 0;
   font-size: 16px;
   color: #fff;
   pointer-events: none;
-  transition: 0.5s;
+  transition: .5s;
 }
-.input:valid ~ .label {
-  top: -20px;
-  left: 0;
-  color: #73ad21;
-  font-size: 12px;
-  pointer-events: none;
-}
+
+// .loginBox .userBox .input:focus ~ .label,
+ .input:valid ~ .label{
+    top: -20px;
+    left: 0;
+    color: #73ad21;
+    font-size: 12px;
+    pointer-events: none;
+  }
+  
+
+
 .loginBox form button {
   position: relative;
   display: inline-block;
   padding: 10px 20px;
-  color: #73ad21;
+  color:#73ad21;
   font-size: 16px;
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
-  transition: 0.5s;
+  transition: .5s;
   margin-top: 10px;
-  letter-spacing: 4px;
+  letter-spacing: 4px
 }
+
 .loginBox button:hover {
   background: #73ad21;
   color: #ffffff;
   border-radius: 5px;
-  box-shadow: 0 0 5px #73ad21, 0 0 25px #73ad21, 0 0 50px #73ad21, 0 0 100px #73ad21;
+  box-shadow: 0 0 5px #73ad21,
+              0 0 25px #73ad21,
+              0 0 50px #73ad21,
+              0 0 100px #73ad21;
 }
+
+// PARTE VISUAL DE PEPINILLO RICK
 .containerGlobal {
   position: relative;
   width: 100%;
@@ -120,13 +133,25 @@
   border-radius: 50%;
   position: absolute;
   z-index: 1;
-  box-shadow: 150px 300px 0px 1px #8fe138, 20px 315px 0px 1px #305e1a, 52px 357px 0px 3px #8fe138, 113px 371px 0px 2px #438125, 108px 327px 0px 3px #8fe138, 32px 265px 0px 3px #8fe138, 97px 220px 0px 1px #8fe138, 107px 282px 0px 3px #4d9b29, 88px 18px 0px 2px #499729, 27px 39px 0px 1px #beff00, 86px 405px 0px 1px #beff00, 30px 388px 0px 3px #305e1a;
+  box-shadow: 150px 300px 0px 1px #8fe138, 20px 315px 0px 1px #305e1a,
+    52px 357px 0px 3px #8fe138, 113px 371px 0px 2px #438125,
+    108px 327px 0px 3px #8fe138, 32px 265px 0px 3px #8fe138,
+    97px 220px 0px 1px #8fe138, 107px 282px 0px 3px #4d9b29,
+    88px 18px 0px 2px #499729, 27px 39px 0px 1px #beff00,
+    86px 405px 0px 1px #beff00, 30px 388px 0px 3px #305e1a;
 }
 .pickleRick .layerOne {
   height: 95%;
   width: 100%;
+
   background-color: #a2e219;
-  background: linear-gradient(to bottom, #a2e219 0%, #4fa029 35%, #4d9a29 65%, #63aa1e 100%);
+  background: linear-gradient(
+    to bottom,
+    #a2e219 0%,
+    #4fa029 35%,
+    #4d9a29 65%,
+    #63aa1e 100%
+  );
   border-radius: 100px;
 }
 .pickleRick .layerTwo {
@@ -137,7 +162,13 @@
   left: 0;
   margin: 45px 27px;
   background-color: #a2e219;
-  background: linear-gradient(to bottom, #bde525 0%, #67c032 35%, #67c032 65%, #52a320 100%);
+  background: linear-gradient(
+    to bottom,
+    #bde525 0%,
+    #67c032 35%,
+    #67c032 65%,
+    #52a320 100%
+  );
   border-radius: 100px;
   filter: url("#goo");
   z-index: 0;
@@ -236,12 +267,14 @@
 }
 .pickleRick .layerThree .wrapEyes .eye:nth-of-type(1) {
   background: linear-gradient(#fcfef9 50%, #e7f2cc);
-  box-shadow: 0px 0px 0px 1px #2e6b12, 0px 0px 0px 8px #74c530, inset 0px 0px 0px 2px #324c0b, inset 0px 0px 0px 6px #e7f2cc;
+  box-shadow: 0px 0px 0px 1px #2e6b12, 0px 0px 0px 8px #74c530,
+    inset 0px 0px 0px 2px #324c0b, inset 0px 0px 0px 6px #e7f2cc;
   left: 0;
 }
 .pickleRick .layerThree .wrapEyes .eye:nth-of-type(2) {
   background: linear-gradient(#fcfef9 50%, #e7f2cc);
-  box-shadow: 0px 0px 0px 1px #2e6b12, 0px 0px 0px 8px #74c530, inset 0px 0px 0px 2px #324c0b, inset 0px 0px 0px 6px #e7f2cc;
+  box-shadow: 0px 0px 0px 1px #2e6b12, 0px 0px 0px 8px #74c530,
+    inset 0px 0px 0px 2px #324c0b, inset 0px 0px 0px 6px #e7f2cc;
   right: 0;
 }
 .pickleRick .layerThree .noseContainer {
@@ -349,8 +382,17 @@
   transform: translate(-50%, -50%);
   height: 630px;
   width: 500px;
-  background: #ffffff;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.45426872) 0%, rgba(152, 234, 254, 0.681) 3%, rgba(239, 251, 254, 0.144) 6%, rgba(65, 211, 240, 0.251) 35%, rgba(90, 218, 105, 0.249) 89%, rgba(34, 110, 23, 0.715) 94%, rgba(28, 60, 20, 0.971) 100%);
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.4542687176937783) 0%,
+    rgba(152, 234, 254, 0.681) 3%,
+    rgba(239, 251, 254, 0.144) 6%,
+    rgba(65, 211, 240, 0.251) 35%,
+    rgba(90, 218, 105, 0.249) 89%,
+    rgba(34, 110, 23, 0.715) 94%,
+    rgba(28, 60, 20, 0.971) 100%
+  );
   border: 0.1px solid #c3e5f1ac;
   border-radius: 100px;
   padding: 13px;
@@ -362,7 +404,17 @@
   border-radius: 50%;
   position: absolute;
   z-index: 2;
-  box-shadow: 110px 300px 4px 1px #3bb9ef, 350px 310px 2px 1px #3bb9ef, 90px 357px 3px 2px #86dbff, 460px 371px 3px 2px #3bb9ef, 60px 310px 3px 3px #3bb9ef, 415px 265px 2px 3px #55c4f4b7, 50px 120px 2px 1px #3bb9ef, 450px 190px 3px 3px #a5e4ff, 80px 190px 2px 2px #9ee2ffc0, 350px 110px 3px 1px #3bb9ef, 50px 405px 3px 1px #79d7ff9b, 390px 388px 2px 3px #7ad7ff9b, 40px 550px 2px 2px #316f19, 350px 560px 3px 3px #305e1a, 50px 520px 2px 2px #499729, 400px 550px 2px 1px #305e1a, 150px 590px 2px 4px #274f18, 300px 570px 3px 3px #305e1a, 190px 570px 3px 2px #464518, 300px 550px 2px 1px #464518, 100px 570px 3px 4px #2a5c16, 430px 580px 1px 4px #305e1a;
+  box-shadow: 110px 300px 4px 1px #3bb9ef, 350px 310px 2px 1px #3bb9ef,
+    90px 357px 3px 2px #86dbff, 460px 371px 3px 2px #3bb9ef,
+    60px 310px 3px 3px #3bb9ef, 415px 265px 2px 3px #55c4f4b7,
+    50px 120px 2px 1px #3bb9ef, 450px 190px 3px 3px #a5e4ff,
+    80px 190px 2px 2px #9ee2ffc0, 350px 110px 3px 1px #3bb9ef,
+    50px 405px 3px 1px #79d7ff9b, 390px 388px 2px 3px #7ad7ff9b,
+    40px 550px 2px 2px #316f19, 350px 560px 3px 3px #305e1a,
+    50px 520px 2px 2px #499729, 400px 550px 2px 1px #305e1a,
+    150px 590px 2px 4px #274f18, 300px 570px 3px 3px #305e1a,
+    190px 570px 3px 2px #464518, 300px 550px 2px 1px #464518,
+    100px 570px 3px 4px #2a5c16, 430px 580px 1px 4px #305e1a;
 }
 .reflex {
   position: absolute;
@@ -383,16 +435,41 @@
   left: 27px;
   width: 450px;
   height: 45px;
-  background: #fee171;
-  background: linear-gradient(180deg, #fee171 0%, #c68047 2%, #674121 4%, #5e4d40 12%, #4f3e30 19%, #624f3f 39%, #4a382a 53%, #342112 71%, #6c5440 77%, #593818 83%, #4a2e15 91%, #7d6958 94%, #6e5c4e 98%, #aba50f 100%);
+  background: rgb(254, 225, 113);
+  background: linear-gradient(
+    180deg,
+    rgba(254, 225, 113, 1) 0%,
+    rgba(198, 128, 71, 1) 2%,
+    rgba(103, 65, 33, 1) 4%,
+    rgba(94, 77, 64, 1) 12%,
+    rgba(79, 62, 48, 1) 19%,
+    rgba(98, 79, 63, 1) 39%,
+    rgba(74, 56, 42, 1) 53%,
+    rgba(52, 33, 18, 1) 71%,
+    rgba(108, 84, 64, 1) 77%,
+    rgba(89, 56, 24, 1) 83%,
+    rgba(74, 46, 21, 1) 91%,
+    rgba(125, 105, 88, 1) 94%,
+    rgba(110, 92, 78, 1) 98%,
+    rgba(171, 165, 15, 1) 100%
+  );
+
   border-radius: 30px;
   position: absolute;
 }
 .capaOne {
   height: 97%;
   width: 98.5%;
-  background: #679840;
-  background: radial-gradient(circle, rgba(103, 152, 64, 0.11912284) 0%, rgba(137, 184, 171, 0.085) 16%, rgba(255, 255, 255, 0.324) 93%, rgba(89, 223, 250, 0.493) 95%, rgba(246, 254, 243, 0.701) 99%);
+  background: rgb(103, 152, 64);
+  background: radial-gradient(
+    circle,
+    rgba(103, 152, 64, 0.1191228444502801) 0%,
+    rgba(137, 184, 171, 0.085) 16%,
+    rgba(255, 255, 255, 0.324) 93%,
+    rgba(89, 223, 250, 0.493) 95%,
+    rgba(246, 254, 243, 0.701) 99%
+  );
+
   border-radius: 90px;
   z-index: -2;
   left: 4px;

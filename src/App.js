@@ -5,13 +5,14 @@ import Detail from './components/Detail/Detail.jsx' ;
 import Cards from './components/CardsComp/Cards';
 import Nav from './components/Nav/Nav';
 import Form from './components/Form/Form.jsx';
-import { Route,Routes } from 'react-router-dom';
+import { Route,Routes, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 
 
 function App () {
   const [characters, setCharacters] = useState([]);
-
+  const location = useLocation();
+  console.log(location);
     function onClose(id){
         setCharacters(characters.filter((Element) => Element.id !== id));
       }
@@ -35,7 +36,7 @@ function App () {
 
   return (
     <div className='App'>
-      <Nav onSearch={onSearch} random={random} />
+      {location.pathname = '/' && <Nav onSearch={onSearch} random={random} />}
         <Routes>
             <Route exact path='/' element={<Form />}></Route>
             <Route exact path='/home' element={<Cards characters={characters} onClose={onClose} />} />
