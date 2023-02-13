@@ -1,5 +1,6 @@
 import style from "./SearchBar.module.css";
 import { useState } from "react";
+import IconoSalir from '../'
 function SearchBar(props) {
    const [character, setCharacter] = useState(0);
 
