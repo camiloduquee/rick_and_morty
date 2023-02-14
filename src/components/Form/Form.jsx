@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import style from "./Form.module.css";
 import validation from "./validation";
-import ContenedorPe from '../ContenedorPepinillo/containerPe';
+import ContenedorPe from "../ContenedorPepinillo/containerPe";
 
 export default function Form(props) {
-  
   const [userData, setUserData] = useState({
     username: "",
     password: "",
@@ -27,9 +26,9 @@ export default function Form(props) {
       })
     );
   };
-  const handleSubmit = (e)=> {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if(!Object.keys(errors).length) {
+    if (!Object.keys(errors).length) {
       props.login(userData);
       setErrors({
         username: "",
@@ -39,10 +38,9 @@ export default function Form(props) {
         username: "",
         password: "",
       });
-    }else {
-      alert('Debes corregir los errores');
+    } else {
+      alert("Debes corregir los errores");
     }
-    
   };
 
   return (
@@ -51,7 +49,7 @@ export default function Form(props) {
       {/* Formulario */}
       <div className={style.loginBox}>
         <h2>Login</h2>
-        <form >
+        <form>
           <div className={style.userBox}>
             <input
               className={style.input}
@@ -61,7 +59,7 @@ export default function Form(props) {
               value={userData.username}
               onChange={handleInputChange}
             />
-            {errors.username && <p>{errors.username}</p>}
+            {errors.username && <p className={style.error}>{errors.username}</p>}
             <label className={style.label}>Username</label>
           </div>
           <div className={style.userBox}>
@@ -73,20 +71,15 @@ export default function Form(props) {
               value={userData.password}
               onChange={handleInputChange}
             />
-            {errors.password && <p>{errors.password}</p>}
+            {errors.password && <p className={style.error}  >{errors.password}</p>}
             <label className={style.label}>Password</label>
           </div>
-          <button type="submit" onClick={handleSubmit}>Submit</button>
+          <button type="submit" onClick={handleSubmit}>
+            Login
+          </button>
         </form>
       </div>
       {/* Formulario */}
     </>
   );
 }
-// .containerGlobal {
-//   position: relative;
-//   width: 100%;
-//   height: 400px;
-//   border: 400px solid #73ad2100;
-//   border-radius: 10px;
-// }
