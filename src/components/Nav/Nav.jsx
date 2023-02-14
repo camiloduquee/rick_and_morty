@@ -11,7 +11,7 @@ function Nav(props) {
                 <Link to={'/about'} className={style.navA} >About</Link>
             </nav>
             <div className={style.SearchBar}>
-                <SearchBar onSearch={props.onSearch} random={props.random}/>
+                <SearchBar onSearch={props.onSearch} random={props.random} setAccess={props.setAccess}/>
             </div>  
         </div>
     );

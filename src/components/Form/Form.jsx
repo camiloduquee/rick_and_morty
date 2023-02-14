@@ -1,101 +1,92 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./Form.module.css";
-import EfectoSvg from "./EfectoSvg";
+import validation from "./validation";
+import ContenedorPe from '../ContenedorPepinillo/containerPe';
 
-export default function Form() {
+export default function Form(props) {
+  
+  const [userData, setUserData] = useState({
+    username: "",
+    password: "",
+  });
+  const [errors, setErrors] = useState({
+    username: "",
+    password: "",
+  });
+  const handleInputChange = (input) => {
+    const property = input.target.name;
+    const value = input.target.value;
+    setUserData({
+      ...userData,
+      [property]: value,
+    });
+    setErrors(
+      validation({
+        ...userData,
+        [property]: value,
+      })
+    );
+  };
+  const handleSubmit = (e)=> {
+    e.preventDefault();
+    if(!Object.keys(errors).length) {
+      props.login(userData);
+      setErrors({
+        username: "",
+        password: "",
+      });
+      setUserData({
+        username: "",
+        password: "",
+      });
+    }else {
+      alert('Debes corregir los errores');
+    }
+    
+  };
+
   return (
-    <div className={style.containerGlobal}>
+    <>
+      <ContenedorPe />
       {/* Formulario */}
-
       <div className={style.loginBox}>
         <h2>Login</h2>
-        <form>
+        <form >
           <div className={style.userBox}>
-            <input className={style.input} type="text" name="" required="" placeholder="Usuario"/>
+            <input
+              className={style.input}
+              type="text"
+              name="username"
+              placeholder="username"
+              value={userData.username}
+              onChange={handleInputChange}
+            />
+            {errors.username && <p>{errors.username}</p>}
             <label className={style.label}>Username</label>
           </div>
           <div className={style.userBox}>
-            <input className={style.input} type="password" name="" required="" placeholder="Contraseña"/>
+            <input
+              className={style.input}
+              type="password"
+              name="password"
+              placeholder="password"
+              value={userData.password}
+              onChange={handleInputChange}
+            />
+            {errors.password && <p>{errors.password}</p>}
             <label className={style.label}>Password</label>
           </div>
-          <button>Submit</button>
+          <button type="submit" onClick={handleSubmit}>Submit</button>
         </form>
       </div>
-
       {/* Formulario */}
-
-      <div className={style.envase}>
-        <div className={style.capaOne} />
-        <div className={style.tapa} />
-        <div className={style.particlesEnvase} />
-        <div className={style.reflex} />
-        <div className={style.reflexTwo} />
-      </div>
-      <div className={style.pickleRick}>
-        <div className={style.shine}></div>
-        <div className={style.particles}>
-          <div className={style.dots}></div>
-        </div>
-        <div className={style.layerOne}></div>
-
-        <div className={style.layerTwo}>
-          <div className={style.cWrap}>
-            <div className={style.circle}></div>
-            <div className={style.circle}></div>
-            <div className={style.circle}></div>
-            <div className={style.circle}></div>
-            <div className={style.circle}></div>
-            <div className={style.circle}></div>
-          </div>
-        </div>
-
-        <div className={style.layerThree}>
-          <div className={style.container}>
-            <div className={style.eyebrow}>
-              <div className={style.leftBrow}></div>
-              <div className={style.rightBrow}></div>
-            </div>
-
-            <div className={style.wrapEyes}>
-              <div className={style.eye}></div>
-              <div className={style.eye}></div>
-              <div className={style.eye}></div>
-              <div className={style.eye}></div>
-            </div>
-            <div className={style.noseContainer}>
-              <div className={style.nose}></div>
-            </div>
-
-            <div className={style.mouthContainer}>
-              <div className={style.mouth}>
-                <div className={style.wrap}>
-                  <div className={style.tooth}></div>
-                  <div className={style.tooth}></div>
-                  <div className={style.tooth}></div>
-                  <div className={style.tooth}></div>
-                  <div className={style.tooth}></div>
-                </div>
-                <div className={style.wrap}>
-                  <div className={style.tooth}></div>
-                  <div className={style.tooth}></div>
-                  <div className={style.tooth}></div>
-                  <div className={style.tooth}></div>
-                  <div className={style.tooth}></div>
-                </div>
-                <div className={style.lines}>
-                  <div className={`${style.leftLine} ${style.line}`}></div>
-                  <div className={`${style.bottomLine} ${style.line}`}></div>
-                  <div className={`${style.rightLine} ${style.line}`}></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={style.irregularities}>
-            <div className={style.irregularity}></div>
-          </div>
-        </div>
-        <EfectoSvg />
-      </div>
-    </div>
+    </>
   );
 }
+// .containerGlobal {
+//   position: relative;
+//   width: 100%;
+//   height: 400px;
+//   border: 400px solid #73ad2100;
+//   border-radius: 10px;
+// }

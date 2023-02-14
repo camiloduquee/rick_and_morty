@@ -4,9 +4,9 @@
 }
 @font-face {
    font-family:PurpleSmile;
-   src: url(../assets/fonts/PurpleSmile.ttf);
+   src: url(./components/assets/fonts/PurpleSmile.ttf);
  }
  @font-face {
    font-family:TituloRick;
-   src: url(../assets/fonts/rickyFont.ttf);
+   src: url(./components/assets/fonts/rickyFont.ttf);
  }

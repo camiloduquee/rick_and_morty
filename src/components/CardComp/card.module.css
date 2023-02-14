@@ -11,10 +11,6 @@
 .contenedor img {
   width: 100%;
 }
-.contenedor:hover{
-  background-color: rgba(8, 8, 8, 0.384);
-  border-radius: 10px;
-}
 .contButon {
   display: grid;
   width: 100%;
@@ -55,10 +51,10 @@
 }
 @media (min-width: 1440px) {
   .contenedorHuman h2 {
-    font-size: 35px;
+    font-size: 24px;
   }
   .titleCard {
-    font-size: 70px;
-    letter-spacing: 4px;
+    font-size: 45px;
+    letter-spacing: 5px;
   }
 }
