@@ -3,7 +3,13 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 4rem;
 }
+.contenedor .parrafo {
+  width: 95%;
+  padding: 1vw;
+  background-color: rgba(0, 255, 255, 0.692);
+}
 .parrafo {
-  font-size: 3rem;
+  position: absolute;
+  font-size: calc(4vw);
   color: var(--blanco);
 }
