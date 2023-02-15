@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 
 function App() {
   const [characters, setCharacters] = useState([]);
-  const [access, setAccess] = useState(false);
+  const [access, setAccess] = useState(true);
   const location = useLocation();
   const navigate = useNavigate();
   const username = "camiloduq@gmail.com";
