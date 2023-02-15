@@ -1,8 +1,8 @@
 .contenedor {
   border-radius: 10px;
   overflow: hidden;
-  background-color: rgba(61, 13, 66, 0.92);
-  border: 5px solid rgba(98, 49, 98, 0.706);
+  background-color: rgba(56, 9, 65, 0.972);
+  border: 3px solid rgba(160, 76, 165, 0.808);
   transition-duration: 0.5s;
 }
 .contenedor:hover {
@@ -55,7 +55,7 @@
 .contenedorHuman {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  background-color: rgba(40, 2, 51, 0.647);
+  background-color: rgba(31, 13, 35, 0.647);
   border: 1.5px solid #1c0024;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
