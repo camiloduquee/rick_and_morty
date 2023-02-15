@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import style from "./Form.module.css";
 import validation from "./validation";
-import ContenedorPe from "../ContenedorPepinillo/containerPe";
+import ContenedorPe from "../ContenedorPepinillo/ContainerPe";
 
 export default function Form(props) {
   const [userData, setUserData] = useState({

@@ -2,13 +2,14 @@
     border-radius: 10px;
     color: white;
     overflow: hidden;
-    margin: 10px 0px;
-    background-color:#44281d;
+    background-color:rgba(61, 13, 66, 0.92);
     background-attachment: fixed;
     gap: 5rem;
+    border: 5px solid rgba(98, 49, 98, 0.706);
 }
 .contenedor img{
     width: 100%;
+    height: 90%;
 }
 .contButon {
     display: grid;
@@ -17,7 +18,7 @@
     justify-content: end;
 }
 .contButon button{
-    background-color: var(--primario);
+    background-color: white;
     color: var(--secundarioOscuro);
     border: 0px;
     width: 3rem;
@@ -27,42 +28,24 @@
     font-size: 1.5rem;
 }
 .contButon button:hover{
-    background-color: var(--primarioOscuro);
+    background-color: rgb(0, 242, 255);
     border-radius: 5px;
 }
 .titleCard{
-    font-size: 32px;
-    margin: 6px 10px;
+    font-size: calc(1vw + 0.6em);
+    margin: 1vw;
     color: var(--terciario);
-    letter-spacing:1.5px;
 }
 .contenedorHuman{
     display: grid;
     width: 100%;
     grid-template-columns: repeat(2, 1fr);
-    background-color: rgba(32, 32, 32, 0.522);
+    background-color: rgba(40, 2, 51, 0.647);
+    border: 2px solid black;
 }
 .contenedorHuman h2{
-    font-size: 15px;
+    font-size: calc(0.8vw + 0.4em);;
     font-family:Helvetica;
-    margin: 10px;
+    margin: 1vw;
     font-weight:400;
 }
-@media (min-width: 1440px) {
-    .contenedorHuman h2 {
-        font-size: 18px; 
-    }
-    .titleCard{
-        font-size: 35px;
-        letter-spacing:5px; 
-    }
-  }
-  @media (min-width: 2160px) {
-    .contenedorHuman h2 {
-        font-size: 20px; 
-    }
-    .titleCard{
-        font-size: 37px;
-        letter-spacing:5px; 
-    }
-  }

@@ -1,10 +1,10 @@
 .contenedor {
   width: 100%;
   display: row;
-  background-color: var(--negro);
+  background-color: black;
   border-radius: 15px;
   height: 14rem;
-  margin-bottom: 5rem;
+  margin-bottom: 10rem;
 }
 .navegacion {
   padding: 0px;
@@ -16,7 +16,7 @@
   padding-top: 10px;
 }
 .navA:hover {
-  background-color: var(--terciario);
+  background-color: #00f2ff;
   border-radius: 10px;
 }
 .SearchBar {
@@ -29,7 +29,7 @@
     align-items: center;
     align-content: center;
     height: 6rem;
-    margin-bottom: 10rem;
+    margin-bottom: 12rem;
   }
   .navegacion {
     display: flex;

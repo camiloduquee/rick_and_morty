@@ -1,35 +1,33 @@
 .grid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 2rem;
-}
-.containerParrafo{
-  position: absolute;
-  width: 100%;
-  top: 38%;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
 }
 .parrafo {
-  font-size: 6rem;
+  font-size: 3rem;
+  align-items: end;
   color: var(--blanco);
-  background-color: rgba(46, 40, 63, 0.598);
-  padding: 5px;
-  height: 7rem;
-  }
+}
 @media (min-width: 768px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 4rem;
+    gap: 5rem;
+  }
+}
+@media (min-width: 1140px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 @media (min-width: 1440px) {
   .grid {
     grid-template-columns: repeat(5, 1fr);
-    gap: 6rem;
+    gap: 7rem;
   }
 }
 @media (min-width: 2160px) {
   .grid {
-    grid-template-columns: repeat(7, 1fr);
-    gap: 8rem;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 9rem;
   }
 }

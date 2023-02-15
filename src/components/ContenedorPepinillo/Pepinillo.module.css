@@ -346,7 +346,7 @@
   height: 630px;
   width: 500px;
   background: #ffffff;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.45426872) 0%, rgba(152, 234, 254, 0.681) 3%, rgba(239, 251, 254, 0.144) 6%, rgba(65, 211, 240, 0.251) 35%, rgba(90, 218, 105, 0.249) 89%, rgba(34, 110, 23, 0.715) 94%, rgba(28, 60, 20, 0.971) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.45426872) 0%, rgba(152, 234, 254, 0.855) 3%, rgba(239, 251, 254, 0.144) 6%, rgba(65, 211, 240, 0.413) 35%, rgba(90, 218, 105, 0.249) 89%, rgba(20, 75, 12, 0.972) 94%, rgba(24, 87, 13, 0.923) 100%);
   border: 0.1px solid #c3e5f1ac;
   border-radius: 100px;
   padding: 13px;

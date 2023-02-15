@@ -1,7 +1,7 @@
 import style from "./Pepinillo.module.css";
 import EfectoSvg from "../assets/icons/EfectoSvg";
 
-export default function Form(props) {
+export default function ContainerPe(props) {
   
     return (
     <div>
