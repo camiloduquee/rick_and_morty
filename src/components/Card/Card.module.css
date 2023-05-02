@@ -1,0 +1,27 @@
+.box {
+  display: flex;
+  flex-flow: column;
+  height: 300px;
+  margin-top: 10vh;
+  background-color: #696969;
+  padding: 0.5em;
+  border-radius: 5%;
+}
+.name {
+  position: relative;
+  color: aliceblue;
+  bottom: 80px;
+  background-color: rgba(0, 0, 0, 0.816);
+  font-size:small ;
+  width: 60%;
+  margin: 1px;
+}
+.button {
+  position: relative;
+  bottom: 300px;
+  width: 12%;
+  left: 260px;
+  color: aqua;
+  background-color: rgb(36, 36, 36);
+}
+

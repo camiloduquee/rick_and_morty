@@ -1,0 +1,333 @@
+  .box {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-size: 12px;
+    background-image: linear-gradient(to right bottom, #3a4767, #f8be9199);
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.2px;
+    color: #fff;
+  }
+  .center {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.5s;
+    z-index: 1;
+  }
+  @media screen and (max-height: 600px) {
+    .center {
+      transform: translate(-50%, -50%) scale(0.75);
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .center {
+      transform: translate(-50%, -50%) scale(0.6);
+    }
+  }
+.circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+  .circleOuter {
+     width: 550px;
+     height: 550px;
+     background-image: linear-gradient(to right bottom, #97ce4c, #096917);
+     background-image: url('../../Asset/img/Rick-Portal.gif');
+     background-position: center center;
+     background-size: 60vw 100%;
+     box-shadow: 0px 0px 20px -3px #97ce4c;
+  }
+  .circleInner {
+    width: 355px;
+    height: 355px;
+    background-image: linear-gradient(to right bottom, #98ce4cbb, #096917);
+    box-shadow: 0px 0px 20px -8px #000;
+  }
+  .four {
+    position: absolute;
+    font-size: 150px;
+    font-weight: 900;
+    text-shadow: 0px 2px 10px rgba(0,0,0,0.5);
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+  .fourOne {
+    top: 100px;
+    left: 30px;
+    z-index: 1;
+  }
+  .fourTwo {
+    top: 100px;
+    left: 230px;
+    z-index: 3;
+  }
+  .astronaut {
+    position: absolute;
+    top: -115px;
+    left: -30px;
+    transform: rotate(17deg);
+  }
+  .astronaut .astronautBackpack {
+    width: 100px;
+    height: 100px;
+    background-color: #e3e3e3;
+    border-radius: 10px;
+  }
+  .astronaut .antenaLeft {
+    left: 10px;
+  }
+  .astronaut .antenaRight {
+    right: 10px;
+  }
+  .astronaut .astronautAntena {
+    position: absolute;
+    top: -7px;
+  }
+  .astronaut .astronautAntena .earDown {
+    position: absolute;
+    bottom: -5px;
+    width: 15px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: #afafaf;
+    z-index: 1;
+  }
+  .astronaut .astronautAntena .earUp {
+    position: relative;
+    width: 15px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: #c3c3c3;
+    z-index: 2;
+  }
+  .astronaut .astronautAntena .antena {
+    position: absolute;
+    top: -29px;
+    width: 2px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #c3c3c3;
+  }
+  .astronaut .astronautAntena .antenaTip {
+    position: absolute;
+    top: -33px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #c3c3c3;
+  }
+  .astronaut .antenaLeft .antena {
+    left: 5px;
+  }
+  .astronaut .antenaRight .antena {
+    right: 5px;
+  }
+  .astronaut .antenaLeft .antenaTip {
+    left: 3px;
+  }
+  .astronaut .antenaRight .antenaTip {
+    right: 3px;
+  }
+  .astronaut .astronautHelmet {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    box-shadow: 0px 5px 1px -3px #808080;
+    transform: translateX(-50%);
+    z-index: 3;
+    overflow: hidden;
+    background-color: white;
+    background-image: url('../../Asset/img/Rick-Asombro.png');
+    background-position: center center;
+        
+  }
+  .astronaut .astronautGlass {
+    position: absolute;
+    top: 13px;
+    left: 5px;
+    width: 56px;
+    height: 56px;
+    background: #00202e5a;
+    border-radius: 10px;
+  }
+  .astronaut .glow {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #001b0b6a;
+  }
+  .astronaut .glowOne {
+    top: 25px;
+    left: 45px;
+    width: 10px;
+    height: 11px;
+  }
+  .astronaut .glowTwo {
+    top: 38px;
+    left: 37px;
+    width: 7px;
+    height: 7px;
+  }
+  .astronaut .astronautBody {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: #c3c3c3;
+    transform: translateX(-50%);
+  }
+  .astronautWire {
+    position: absolute;
+    top: -40px;
+    left: -260px;
+  }
+  .astronautHands {
+    position: absolute;
+    top: -89px;
+    left: -23px;
+    width: 100px;
+    transform: rotate(17deg);
+    z-index: 3;
+  }
+  .astronautHands .astronautHand {
+    position: absolute;
+  }
+  .astronautHands .handLeft {
+    left: -3px;
+  }
+  .astronautHands .handRight {
+    transform: scaleX(-1);
+    right: -3px;
+  }
+  .oh {
+    transition: all 0.1s linear;
+    -webkit-animation: floating 4s linear infinite;
+            animation: floating 4s linear infinite;
+    z-index: 2;
+  }
+  .planet {
+    background-color: #a9f3fd;
+    box-shadow: inset -6px -10px 0px 1px #4cb5c3, 0px 2px 10px rgba(0,0,0,0.4);
+    width: 155px;
+    height: 155px;
+  }
+  .craters .crater {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #35c9dd;
+  }
+  .craters .craterOne {
+    width: 35px;
+    height: 35px;
+    top: 30px;
+    left: 25px;
+  }
+  .craters .craterTwo {
+    width: 23px;
+    height: 23px;
+    top: 20px;
+    left: 93px;
+  }
+  .craters .craterThree {
+    width: 17px;
+    height: 17px;
+    top: 77px;
+    left: 17px;
+  }
+  .craters .craterFour {
+    width: 10px;
+    height: 10px;
+    top: 90px;
+    left: 80px;
+  }
+  .craters .craterFive {
+    width: 25px;
+    height: 25px;
+    top: 115px;
+    left: 50px;
+  }
+  .craters .craterSix {
+    width: 13px;
+    height: 13px;
+    top: 118px;
+    left: 105px;
+  }
+  .button {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 12px;
+    background-color: #a9f3fd;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    z-index: 999;
+  }
+  .button:hover {
+    transform: translateX(-50%) scale(0.95);
+    background-color:#35c9dd ;
+  }
+  .sorry {
+    position: absolute;
+    width: 18vw;
+    height: 5vh;
+    border-radius: 10px;
+    top: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #a9f3fd;
+    border: 1px solid #fff;
+    box-shadow: 0px 0px 20px -8px #000;
+  }
+  .tex{
+    margin-top: 4px;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    
+  }
+  @-webkit-keyframes floating {
+    0%, 100% {
+      transform: translate(1px, 0px) rotate(-2deg);
+    }
+    20% {
+      transform: translate(-3px, -2px) rotate(1deg);
+    }
+    40% {
+      transform: translate(0px, 2px) rotate(2deg);
+    }
+    60% {
+      transform: translate(-2px, -1px) rotate(2deg);
+    }
+    80% {
+      transform: translate(0px, 2px) rotate(2deg);
+    }
+  }
+  @keyframes floating {
+    0%, 100% {
+      transform: translate(1px, 0px) rotate(-2deg);
+    }
+    20% {
+      transform: translate(-3px, -2px) rotate(1deg);
+    }
+    40% {
+      transform: translate(0px, 2px) rotate(2deg);
+    }
+    60% {
+      transform: translate(-2px, -1px) rotate(2deg);
+    }
+    80% {
+      transform: translate(0px, 2px) rotate(2deg);
+    }
+  }
+  
