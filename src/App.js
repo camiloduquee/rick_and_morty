@@ -1,16 +1,40 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { Routes, Route, useLocation} from "react-router-dom";
+import { useState,useEffect } from "react";
 // Import de component
 import Nav from "./components/Nav/Nav";
 import Error from "./components/Error/Error";
+import Form from "./components/Form/Form";
 //Import view
 import About from "./View/About.jsx";
 import Home from "./View/Home.jsx";
 import Detail from "./View/Detail.jsx";
-function App() {
-  const [characters, setCharacters] = useState([]);
+//acesso
+import { useNavigate } from "react-router-dom";
 
+function App() {
+  // ----------- accesso
+  const [access, setAccess] = useState(false);
+  const navigate = useNavigate();
+  const username = "camiloduquee@gmail.com";
+  const password = "password123";
+  
+  const login = (userData) => {
+    if (userData.password === password && userData.username === username) {
+      setAccess(true);
+      navigate("/");
+    }
+  };
+  useEffect(() => {
+    !access && navigate("/");
+  }, [access]);
+
+// Fin de codigo de acceso
+
+  const [characters, setCharacters] = useState([]);
+  const location = useLocation();
+  
+  
   const onClose = (id) => {
     setCharacters(characters.filter((Element) => Element.id !== id));
   };
@@ -34,8 +58,9 @@ function App() {
   };
   return (
     <div>
-      <Nav onSearch={onSearch} random={random} />
+      {location.pathname !== "/" && <Nav onSearch={onSearch} random={random} />}
       <Routes>
+        <Route path="/" element={<Form login={login}/>} />
         <Route path="/about" element={<About />} />
         <Route
           path="/home"

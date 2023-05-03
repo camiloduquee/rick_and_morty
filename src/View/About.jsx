@@ -1,13 +1,11 @@
 import React from "react";
 import AboutTx from '../components/AboutTx/AboutTx.jsx';
-import Star from '../components/Star/Star.jsx';
-const About = () => {
 
+const About = () => {
     return(
-        <>
+        <div>
             <AboutTx />
-            <Star />
-        </>
+        </div>
     )
 }
 export default About;

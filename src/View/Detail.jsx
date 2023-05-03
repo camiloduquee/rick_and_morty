@@ -1,12 +1,12 @@
 import React from "react";
-import DetailId from "../components/DetailId/DetailId";
-import Start from '../components/Star/Star.jsx';
+import DetailId from '../components/DetailId/DetailId.jsx';
+
 const Detail = () => {
-  return (
-    <div>
-       <DetailId />
-       < Start /> 
-    </div>
-  );
-};
+    return (
+        <div>
+            <DetailId />
+            
+        </div>
+    )
+}
 export default Detail;

@@ -1,12 +1,11 @@
 import React from "react";
 import Cards from '../components/Cards/Cards.jsx';
-import Star from '../components/Star/Star.jsx';
-const Home = ({characters,onClose}) => {
-    return (
-        <>
-            <Cards characters={characters} onClose={onClose}/>
-            <Star />
-        </>
+
+const Home = (props) => {
+    return(
+        <div>
+            <Cards characters={props.characters} onClose={props.onClose} />
+        </div>
     )
 }
 export default Home;
