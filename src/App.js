@@ -23,7 +23,7 @@ function App() {
   const dispatch = useDispatch();
   const [access, setAccess] = useState(false);
   const navigate = useNavigate();
-  const USERNAME = "camilo-duque";
+  const USERNAME = "camilo-duque@gmail.com";
   const PASSWORD = "pass1234";
 
   const login = (userData) => {
