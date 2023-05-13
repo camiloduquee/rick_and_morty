@@ -15,7 +15,13 @@ const Nav = (props) => {
           <div>Home</div>
         </Link>
         <Link to="/About" className={styles.navA}>
-          <div >About</div>
+          <div>About</div>
+        </Link>
+        <Link to="/Favorites" className={styles.navA}>
+        <div>Favorites</div>
+        </Link>
+        <Link to="/proyectos" className={styles.navA}>
+          <div>Projects</div>
         </Link>
       </nav>
       <div className={styles.contenedorTwo}>
@@ -24,7 +30,7 @@ const Nav = (props) => {
             <SearchBar onSearch={props.onSearch} random={props.random} />
             <button
               className={styles.button}
-              // onClick={handleLogout}
+              onClick={props.logout}
               title={"Cerrar Sección"}
             >
               <SalirAl />
@@ -33,7 +39,7 @@ const Nav = (props) => {
         ) : (
           <button
             className={styles.button}
-            // onClick={handleLogout}
+            onClick={props.logout}
             title={"Cerrar Sección"}
           >
             <SalirAl />

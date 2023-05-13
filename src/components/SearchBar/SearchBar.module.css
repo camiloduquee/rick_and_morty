@@ -6,7 +6,7 @@
   .button {
     border-radius: 20px;
     color: var(--black);
-    padding: 2px 10px;
+    padding: 6px;
     text-decoration: none;
     font-size: 13px;
     margin: 4px;
@@ -15,10 +15,11 @@
     transition-duration: 0.3s;
     cursor: pointer;
     border: 5px;
+    fill: #00bd4f; 
   }
   .button:hover {
-    color: #0D0D0D;
-    filter: invert(100%);
+    background-color: #7700ffcc;
+    fill: white;
   }
   .input {
     font-size: 13.5px;

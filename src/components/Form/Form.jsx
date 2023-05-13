@@ -3,10 +3,8 @@ import styles from "./Form.module.css";
 import { useState } from "react";
 import validation from "./Validation";
 
-
-
 const Form = (props) => {
-    const [userData, setUserData] = useState({
+  const [userData, setUserData] = useState({
     username: "",
     password: "",
   });
@@ -17,40 +15,41 @@ const Form = (props) => {
   const handleInputChange = (event) => {
     const property = event.target.name;
     const value = event.target.value;
-    
+
     setUserData({
-        ...userData,
-        [property]:value,
-    })
+      ...userData,
+      [property]: value,
+    });
     setErrors(
-        validation({
-            ...userData,
-            [property]:value,
-    }))
+      validation({
+        ...userData,
+        [property]: value,
+      })
+    );
   };
-const handleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     if (!Object.values(errors).length) {
-        props.login(userData);
-            setUserData({
-                username:'',
-                password:'',
-            })
-            setErrors({
-                username:'',
-                password:'', 
-            })
-
+      props.login(userData);
+      setUserData({
+        username: "",
+        password: "",
+      });
+      setErrors({
+        username: "",
+        password: "",
+      });
+    } else {
+      alert("Debes corregir los errores");
     }
-    else {
-        alert('Debes corregir los errores');
-    }
-}
+  };
   return (
     <div>
       <form onSubmit={handleSubmit} className={styles.loginBox}>
         <div className={styles.userBox}>
-          <label htmlFor="username">User</label>
+          <label className={styles.label} htmlFor="username">
+            User
+          </label>
           <input
             className={styles.input}
             type="text"
@@ -58,10 +57,13 @@ const handleSubmit = (event) => {
             name="username"
             value={userData.username}
             onChange={handleInputChange}
+            autocomplete='off'
           />
-          {errors.password && <p className={styles.error}>{errors.password}</p>}
+          {errors.username && <p className={styles.error}>{errors.username}</p>}
 
-          <label htmlFor="password">Password</label>
+          <label className={styles.label} htmlFor="password">
+            Password
+          </label>
           <input
             className={styles.input}
             type="password"
@@ -69,11 +71,15 @@ const handleSubmit = (event) => {
             name="password"
             value={userData.password}
             onChange={handleInputChange}
+            autocomplete='off'
           />
           {errors.password && <p className={styles.error}>{errors.password}</p>}
         </div>
-
-        <button type="submit">Login</button>
+        <div className={styles.boxbutton}>
+          <button type="submit" className={styles.button}>
+            Login
+          </button>
+        </div>
       </form>
     </div>
   );

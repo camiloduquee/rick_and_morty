@@ -1,5 +1,5 @@
 import React from "react";
-import AboutTx from '../components/AboutTx/AboutTx.jsx';
+import AboutTx from '../AboutTx/AboutTx.jsx';
 
 const About = () => {
     return(

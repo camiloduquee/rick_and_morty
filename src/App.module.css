@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+}
+.bodyForm {
+  width: 100vw;
+  height: 120vh;
+  overflow: hidden;
+  color: #fff;
+  background-image: linear-gradient(to right bottom, #000000, #3c00ac);
+}
+.bodyPage {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  color: #fff;
+  background-image: url("./Asset/img/backgtound-inicio.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+}

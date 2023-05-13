@@ -2,6 +2,7 @@ import styles from "./Jar.module.css";
 import stylesText from "../DetailId/DetailId.module.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import ButtonClose from "../../Asset/icons/ButtonClose.jsx";
 
 export default function Jar(props) {
   const navigate = useNavigate();
@@ -12,8 +13,9 @@ export default function Jar(props) {
   };
   return (
     <div className={styles.center}>
-      <img className={stylesText.imagen} src={props.character.image} />
-
+        
+        <img className={stylesText.imagen} src={props.character.image} />
+     
       {/*---------- Jar -------------*/}
 
       <div className={styles.envase}>
@@ -26,46 +28,49 @@ export default function Jar(props) {
             {/*----------- Detail ------------- */}
 
             <div className={stylesText.BoxGrid}>
-              <button className={stylesText.boton} onClick={backToTheHome}>
-                x
-              </button>
-              <div className={stylesText.block}>
-                <p>{detailId}</p>
-              </div>
+              
+                <>
+                  <button className={stylesText.button} onClick={backToTheHome}>
+                    <ButtonClose />
+                  </button>
+                  <div className={stylesText.block}>
+                    <p>{detailId}</p>
+                  </div>
 
-              <div className={stylesText.box} />
-              <div className={stylesText.boxLeft} />
-              <div className={stylesText.boxRight} />
-              <div className={stylesText.container}>
-                <h1 className={stylesText.name}> {props.character.name}</h1>
+                  <div className={stylesText.box} />
+                  <div className={stylesText.container}>
+                    <h1 className={stylesText.name}> {props.character.name}</h1>
 
-                <div>
-                  {props.character.status && (
-                    <p className={stylesText.text}>
-                      Status: {props.character.status}
-                    </p>
-                  )}
-                  {props.character.species && (
-                    <p className={stylesText.text}>
-                      Especie: {props.character.species}
-                    </p>
-                  )}
+                    <div>
+                      {props.character.status && (
+                        <p className={stylesText.text}>
+                          Status: {props.character.status}
+                        </p>
+                      )}
+                      {props.character.species && (
+                        <p className={stylesText.text}>
+                          Especie: {props.character.species}
+                        </p>
+                      )}
 
-                  {props.character.gender && (
-                    <p className={stylesText.text}>
-                      Genero: {props.character.gender}
-                    </p>
-                  )}
-                  {props.character.origin && (
-                    <p className={stylesText.text}>
-                      Origen: {props.character.origin.name}
-                    </p>
-                  )}
-                </div>
-              </div>
+                      {props.character.gender && (
+                        <p className={stylesText.text}>
+                          Genero: {props.character.gender}
+                        </p>
+                      )}
+                      {props.character.origin && (
+                        <p className={stylesText.text}>
+                          Origen: {props.character.origin.name}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </>
+              
             </div>
 
             {/* ------- Detail  FIN -------*/}
+
             {/* <div className={styles.reflexTwo} /> */}
           </div>
         </div>

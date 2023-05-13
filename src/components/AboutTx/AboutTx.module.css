@@ -1,12 +1,30 @@
-.container{
-    width: 100%;
-    height: 400px;
-    position: relative;
-    background-color: rgb(22, 141, 141);
-
+.BoxGrid {
+  display: grid;
+  place-items: center;
+  font-family: sans-serif;
+  margin-top: 7vh;
+  width: 80%;
+  transition: all 0.2s linear;
 }
-.text{
-    color: aliceblue;
-    
-
+.title {
+  text-transform: uppercase;
+}
+.text {
+  text-align: justify;
+  text-indent: 1.5em;
+  font-size: clamp(6px, 2.3vw, 100%);
+}
+.button {
+  padding: 8px 12px;
+  background-color: #53abee;
+  border: 1px solid #2a6cfb;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 999;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  transition: 0.2s;
+}
+.button:hover {
+  background: #63cbfb;
 }

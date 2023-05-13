@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import styles from "./DetailId.module.css";
+import { useParams } from "react-router-dom";
 import Jar from "../Jar/Jar";
+
 
 const DetailId = () => {
   const [character, setCharacter] = useState({});

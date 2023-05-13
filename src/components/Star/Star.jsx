@@ -2,10 +2,11 @@ import React from "react";
 import styles from  './Star.module.css';
 const Star = () => {
   const divStar = () => {
-    const elemt = <div className={styles.star}></div>;
+     
     const star = [];
     for (let i = 0; i < 80; i++) {
-      star.push(elemt);
+      star.push(<div key={i} className={styles.star}></div>);
+
     }
     return star;
   };

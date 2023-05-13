@@ -1,0 +1,6 @@
+.center {
+  display: grid;
+  place-content: center;
+  margin-top: 25vh;
+  font-size: 2rem;
+}
