@@ -3,7 +3,7 @@
 }
 .bodyForm {
   width: 100vw;
-  height: 120vh;
+  min-height: 120vh; 
   overflow: hidden;
   color: #fff;
   background-image: linear-gradient(to right bottom, #000000, #3c00ac);

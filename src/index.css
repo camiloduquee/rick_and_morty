@@ -1,7 +1,11 @@
+html{
+  height: 100%;
+}
 * {
   box-sizing: border-box;
 }
 body {
+  min-height: 100vh; 
   font-size: 12px;
   font-family: "Open Sans", sans-serif;
   letter-spacing: 0.2px;
