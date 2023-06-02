@@ -18,10 +18,10 @@ const getCharById = (req, res) => {
         res.status(200).json(characterId);
       },
       (reason) => {
-        res.status(404).send("character not found");
+        res.status(404).json({message:reason.message});
       }
     )
-    .catch((error) => res.status(500).send(error));
+    .catch((error) => res.status(500).json({message:error.message}));
 };
 
 module.exports = getCharById;

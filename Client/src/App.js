@@ -17,23 +17,31 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 //redux
 import { useDispatch } from "react-redux";
-import {deleteFavorite} from './Redux/actions';
+import { deleteFavorite } from "./Redux/actions";
 function App() {
   // ----------- accesso -----------//
   const dispatch = useDispatch();
   const [access, setAccess] = useState(false);
   const navigate = useNavigate();
-  const USERNAME = "camilo-duque@gmail.com";
-  const PASSWORD = "pass1234";
 
-  const login = (userData) => {
-    if (userData.password === PASSWORD && userData.username === USERNAME) {
-      setAccess(true);
-      navigate("/home");
-    } else {
-      alert("Error de usuario o contraseña");
-    }
-  };
+  function login(userData) {
+    const { username, password } = userData;
+
+    const URL = "http://localhost:3001/rickandmorty/login/";
+    axios(`${URL}?email=${username}&password=${password}`)
+      .then(({ data }) => {
+        console.log(data);
+        const { access } = data;
+        if (access) {
+          setAccess(data);
+          access && navigate("/home");
+        } else {
+          alert("Error de usuario o contraseña");
+        }
+      })
+      .catch((error) => error.message);
+  }
+
   const logout = () => {
     setAccess(false);
     navigate("/");
@@ -49,12 +57,11 @@ function App() {
   const location = useLocation();
 
   const onClose = (id) => {
-    //  Borro un Personaje 
+    //  Borro un Personaje
     setCharacters(characters.filter((Element) => Element.id !== id));
     //Boro un personaje Favorito
     dispatch(deleteFavorite(id));
   };
-
 
   async function onSearch(character) {
     axios(`http://localhost:3001/rickandmorty/character/${character}`)
@@ -87,7 +94,7 @@ function App() {
           path="/home"
           element={<Home characters={characters} onClose={onClose} />}
         />
-        <Route path="/Favorites" element={<Favorites />}/>
+        <Route path="/Favorites" element={<Favorites />} />
         <Route path="/detail/:detailId" element={<Detail />} />
         <Route path="/proyectos" element={<Proyectos />} />
         <Route path="*" element={<Error />} />

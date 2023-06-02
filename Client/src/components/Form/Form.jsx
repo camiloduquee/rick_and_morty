@@ -29,6 +29,7 @@ const Form = (props) => {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
+
     if (!Object.values(errors).length) {
       props.login(userData);
       setUserData({
@@ -57,7 +58,6 @@ const Form = (props) => {
             name="username"
             value={userData.username}
             onChange={handleInputChange}
-            autocomplete='off'
           />
           {errors.username && <p className={styles.error}>{errors.username}</p>}
 
@@ -71,7 +71,6 @@ const Form = (props) => {
             name="password"
             value={userData.password}
             onChange={handleInputChange}
-            autocomplete='off'
           />
           {errors.password && <p className={styles.error}>{errors.password}</p>}
         </div>
