@@ -7,14 +7,13 @@ import { useState, useEffect } from "react";
 export function Card(props) {
   const [isFav, setIsFav] = useState(false);
   const detailId = props.id;
-
   const handleFavorite = () => {
     if (isFav) {
       setIsFav(false);
       props.deleteFavorite(props.id);
     } else {
       setIsFav(true);
-      props.addFavorite(props.id);
+      props.addFavorite(props);
     }
   };
   useEffect(() => {

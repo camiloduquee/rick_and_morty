@@ -29,7 +29,6 @@ const Form = (props) => {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-
     if (!Object.values(errors).length) {
       props.login(userData);
       setUserData({

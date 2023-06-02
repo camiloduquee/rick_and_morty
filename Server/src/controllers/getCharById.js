@@ -18,7 +18,7 @@ const getCharById = (req, res) => {
         res.status(200).json(characterId);
       },
       (reason) => {
-        res.status(404).json({message:reason.message});
+        res.status(404).send('Not fount character');
       }
     )
     .catch((error) => res.status(500).json({message:error.message}));

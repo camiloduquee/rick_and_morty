@@ -30,7 +30,6 @@ function App() {
     const URL = "http://localhost:3001/rickandmorty/login/";
     axios(`${URL}?email=${username}&password=${password}`)
       .then(({ data }) => {
-        console.log(data);
         const { access } = data;
         if (access) {
           setAccess(data);
@@ -66,7 +65,7 @@ function App() {
   async function onSearch(character) {
     axios(`http://localhost:3001/rickandmorty/character/${character}`)
       .then(({ data }) => {
-        if (data.name) {
+        if (data) {
           characters.find((Element) => Element.id === data.id) === undefined
             ? setCharacters((characters) => [...characters, data])
             : alert("Personaje repetido, Prueba otro ID.");
