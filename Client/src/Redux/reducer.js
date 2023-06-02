@@ -10,8 +10,7 @@ const rootReducer = (state = initialState, action) => {
     case ADD_FAVORITE:
       return {
         ...state,
-        myFavorites: [...state.myFavorites, action.payload],
-        allCharacters: [...state.allCharacters, action.payload],
+        myFavorites: payload, allCharacters: payload 
       };
     case DELETE_FAVORITE:
       return {
