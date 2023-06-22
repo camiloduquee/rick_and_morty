@@ -24,21 +24,25 @@ function App() {
   const [access, setAccess] = useState(false);
   const navigate = useNavigate();
 
-  function login(userData) {
+  async function login(userData) {
     const { username, password } = userData;
 
-    const URL = "http://localhost:3001/rickandmorty/login/";
-    axios(`${URL}?email=${username}&password=${password}`)
-      .then(({ data }) => {
-        const { access } = data;
-        if (access) {
-          setAccess(data);
-          access && navigate("/home");
-        } else {
-          alert("Error de usuario o contraseña");
-        }
-      })
-      .catch((error) => error.message);
+    const endPoint = "http://localhost:3001/rickandmorty/login/";
+
+    try {
+      const { data } = await axios(
+        `${endPoint}?email=${username}&password=${password}`
+      );
+      const { access } = data;
+      if (access) {
+        setAccess(data);
+        access && navigate("/home");
+      } else {
+        throw "Error de usuario o contraseña";
+      }
+    } catch (error) {
+      alert(error);
+    }
   }
 
   const logout = () => {
@@ -63,17 +67,17 @@ function App() {
   };
 
   async function onSearch(character) {
-    axios(`http://localhost:3001/rickandmorty/character/${character}`)
-      .then(({ data }) => {
-        if (data) {
-          characters.find((Element) => Element.id === data.id) === undefined
-            ? setCharacters((characters) => [...characters, data])
-            : alert("Personaje repetido, Prueba otro ID.");
-        } else {
-          window.alert("¡No hay personajes con este ID!");
-        }
-      })
-      .catch((error) => window.alert("Error"));
+    const { data } = await axios(
+      `http://localhost:3001/rickandmorty/character/${character}`
+    );
+
+    try {
+      characters.find((Element) => Element.id === data.id) === undefined
+        ? setCharacters((characters) => [...characters, data])
+        : alert("Personaje repetido, Prueba otro ID.");
+    } catch (error) {
+      window.alert(error.response.data);
+    }
   }
   const random = () => {
     let randomId = Math.floor(Math.random() * 826);

@@ -69,7 +69,8 @@
   cursor: pointer;
   bottom: 304px;
   width: 3rem;
-  background-color: rgba(212, 0, 249, 0.941);
+  height: 1.5rem;
+  background-color:  #3e1af0;
   border: 0px;
   border-radius: 100%;
   z-index: 12;
@@ -80,7 +81,8 @@
   cursor: pointer;
   bottom: 304px;
   width: 3rem;
-  background-color: #2a6cfb;
+  height: 1.5rem;
+  background-color: rgba(212, 0, 249, 0.941);
   border: 0px;
   border-radius: 100%;
   z-index: 12;
