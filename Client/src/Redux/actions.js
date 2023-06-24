@@ -1,8 +1,9 @@
-import { ADD_FAVORITE, DELETE_FAVORITE, FILTER, ORDER, DELETEALL } from "./actions-types";
+import { ADD_FAVORITE, DELETE_FAVORITE, FILTER, ORDER, DELETEALL, ACCESS_KEY } from "./actions-types";
 import axios from "axios";
 
 export const addFavorite = (character) => async (dispatch) => {
   const char = {
+    UserId: character.accesskey,
     id: character.id,
     name: character.name,
     status: character.status,
@@ -56,4 +57,10 @@ export const deleteAll = () => {
       });
     });
   };
+}
+export const accessKey = (id) => {
+  return {
+    type: "ACCESS_KEY",
+    payload: id,
+  }
 }

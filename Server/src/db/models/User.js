@@ -4,10 +4,16 @@ module.exports = (database) => {
   database.define(
     "User",
     {
+      id: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        allowNull: false,
+        primaryKey: true,
+      },
       email: {
         type: DataTypes.STRING,
         allowNull: false,
-        primaryKey: true,
+        unique:true,
         validate: {
           isEmail: true,
         }

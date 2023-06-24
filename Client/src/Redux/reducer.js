@@ -1,15 +1,21 @@
-import { ADD_FAVORITE, DELETE_FAVORITE, FILTER, ORDER, DELETEALL } from "./actions-types";
+import {
+  ADD_FAVORITE,
+  DELETE_FAVORITE,
+  FILTER,
+  ORDER,
+  DELETEALL,
+  ACCESS_KEY,
+} from "./actions-types";
 
 const initialState = {
   myFavorites: [],
   allCharacters: [],
+  accesskey:[],
 };
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
-    
     case ADD_FAVORITE:
-      
       return {
         ...state,
         myFavorites: action.payload,
@@ -35,6 +41,11 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         myFavorites: [...state.allCharacters].sort(comparator),
       };
+    case ACCESS_KEY:
+      return {
+        ...state,
+        accesskey: action.payload,
+        };
     case DELETEALL:
       return {
         myFavorites: action.payload,

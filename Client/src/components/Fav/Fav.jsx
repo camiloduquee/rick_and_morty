@@ -9,6 +9,7 @@ import { BsFillTrashFill } from "react-icons/bs";
 
 const Fav = () => {
   const favorite = useSelector((state) => state.myFavorites);
+
   const dispatch = useDispatch();
 
   const handleOrder = (event) => {
@@ -20,6 +21,7 @@ const Fav = () => {
   const deleteAllOn = () => {
     dispatch(deleteAll())
   };
+  
   return (
     <>
       <div className={styles.center}>

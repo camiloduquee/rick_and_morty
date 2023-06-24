@@ -9,7 +9,6 @@ module.exports = (database) => {
       },
       name: {
          type: DataTypes.STRING,
-         
          allowNull: false
       },
       status: {

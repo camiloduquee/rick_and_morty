@@ -1,16 +1,19 @@
 const { newPostFavorite } = require("../services/services.js");
 
 const postFav = async (req, res) => {
-  const {userName, id, name, status, gender, origin, image } = req.body;
   try {
+    const { UserId, id, name, status, gender, origin, image } = req.body;
+    
     if (
       ![id, name, status, gender, origin, image].every(
         (currentValue) => currentValue.length !== 0
       )
     )
       throw new Error("Faltan datos.");
-    const origiName = origin.name;
+    
+      const origiName = origin.name;
     const newFavorite = await newPostFavorite({
+      UserId,
       id,
       name,
       status,
@@ -18,7 +21,7 @@ const postFav = async (req, res) => {
       origiName,
       image,
     });
-    
+
     res.status(201).json(newFavorite);
   } catch (error) {
     if (error.message === "Faltan datos") {

@@ -1,5 +1,5 @@
 import styles from "./App.module.css";
-import { Routes, Route, useLocation, Await } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 // Import de component
 import Nav from "./components/Nav/Nav";
@@ -17,12 +17,13 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 //redux
 import { useDispatch } from "react-redux";
-import { deleteFavorite } from "./Redux/actions";
+import { deleteFavorite, accessKey } from "./Redux/actions";
+
 function App() {
   // ----------- accesso -----------//
-  const dispatch = useDispatch();
   const [access, setAccess] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   async function login(userData) {
     try {
@@ -31,9 +32,10 @@ function App() {
       const { data } = await axios(
         `${endPoint}?email=${username}&password=${password}`
       );
-      const { access } = data;
-      if (access) {
-        setAccess(data);
+        const {status, id} = data;
+      if (status) {
+        dispatch(accessKey(id));
+        setAccess(status);
         access && navigate("/home");
       }
     } catch (error) {
@@ -42,14 +44,17 @@ function App() {
   }
 
   const logout = () => {
-    setAccess(false);
+    setAccess((false));
     navigate("/");
   };
 
+
+  
   useEffect(() => {
     !access && navigate("/");
   }, [access]);
 
+  
   // Fin de codigo de acceso
 
   const [characters, setCharacters] = useState([]);
@@ -69,11 +74,11 @@ function App() {
       );
       if (characters.find((Element) => Element.id === data.id) === undefined) {
         setCharacters((characters) => [...characters, data]);
-      }else{
-        alert("You have entered a repeated id")
+      } else {
+        alert("You have entered a repeated id");
       }
     } catch (error) {
-        alert(error.response.data);
+      alert(error.response.data);
     }
   }
   const random = () => {
