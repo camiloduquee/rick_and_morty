@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 
-module.exports = (sequelize) => {
-   sequelize.define('Favorite', {
+module.exports = (database) => {
+   database.define('Favorite', {
       id:{
          type: DataTypes.INTEGER,
          allowNull: false,
@@ -9,19 +9,19 @@ module.exports = (sequelize) => {
       },
       name: {
          type: DataTypes.STRING,
+         
          allowNull: false
       },
       status: {
          type: DataTypes.ENUM('Alive', 'Dead','unknown'),
-         defaultValue: "unknown",
          allowNull: false
       },
       gender: {
-         type: DataTypes.ENUM('Female', 'Male', 'Genderless', 'unknown'),
-         defaultValue: "unknown",
+         type: DataTypes.ENUM('Female', 'Male', 'Genderless','unknown'),
+         // defaultValue: "unknown",
          allowNull: false
       },
-      origin: {
+      origiName: {
          type: DataTypes.STRING,
          allowNull: false
       },

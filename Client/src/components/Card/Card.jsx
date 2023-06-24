@@ -13,6 +13,7 @@ export function Card(props) {
       props.deleteFavorite(props.id);
     } else {
       setIsFav(true);
+      
       props.addFavorite(props);
     }
   };

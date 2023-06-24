@@ -1,6 +1,6 @@
 // const { conn } = require("./db/DB_connection");
 const fs = require("fs");
-const { conn } = require("./db/DB_connection");
+const { database } = require("./db/DB_connection");
 const express = require("express");
 const server = express();
 const router = require("./routes/index");
@@ -19,10 +19,10 @@ server.use((req, res, next) => {
 server.use(express.json());
 server.use("/rickandmorty", router);
 
-conn.sync({ force: true }).then(
+database.sync({ alter: true }).then(() => {
   server.listen(PORT, () => {
     console.log(`Server raised in port: ${PORT}`);
-  })
-);
+  });
+});
 
 module.exports = express;

@@ -34,3 +34,24 @@
 .contentSelect:hover {
   background:  #7700ffe8;
 }
+.button {
+  border-radius: 10px;
+  background-color: #53abee;
+  padding: 10px;
+  text-decoration: none;
+  margin-left: 12px;
+  -webkit-transition-duration: 0.3s;
+  /* Safari */
+  transition-duration: 0.3s;
+  cursor: pointer;
+  border: 5px;
+  fill: white;
+  color:aliceblue;
+  transform: scale(1.2);
+}
+.button:hover {
+  background-color: #7700ffe8;
+  transform: scale(1);
+  border: 3px;
+  fill: white;
+}

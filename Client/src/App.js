@@ -1,5 +1,5 @@
 import styles from "./App.module.css";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, Await } from "react-router-dom";
 import { useState, useEffect } from "react";
 // Import de component
 import Nav from "./components/Nav/Nav";
@@ -9,7 +9,7 @@ import Form from "./components/Form/Form";
 import About from "./components/View/About.jsx";
 import Home from "./components/View/Home.jsx";
 import Detail from "./components/View/Detail.jsx";
-import Favorites from "./components/View/Favorites.jsx";
+import Favorites from "./components/Fav/Fav.jsx";
 import Proyectos from "./components/View/Proyectos.jsx";
 //acesso
 import { useNavigate } from "react-router-dom";
@@ -25,11 +25,9 @@ function App() {
   const navigate = useNavigate();
 
   async function login(userData) {
-    const { username, password } = userData;
-
-    const endPoint = "http://localhost:3001/rickandmorty/login/";
-
     try {
+      const { username, password } = userData;
+      const endPoint = "http://localhost:3001/rickandmorty/login";
       const { data } = await axios(
         `${endPoint}?email=${username}&password=${password}`
       );
@@ -37,11 +35,9 @@ function App() {
       if (access) {
         setAccess(data);
         access && navigate("/home");
-      } else {
-        throw "Error de usuario o contraseña";
       }
     } catch (error) {
-      alert(error);
+      alert(error.response.data);
     }
   }
 
@@ -67,16 +63,17 @@ function App() {
   };
 
   async function onSearch(character) {
-    const { data } = await axios(
-      `http://localhost:3001/rickandmorty/character/${character}`
-    );
-
     try {
-      characters.find((Element) => Element.id === data.id) === undefined
-        ? setCharacters((characters) => [...characters, data])
-        : alert("Personaje repetido, Prueba otro ID.");
+      const { data } = await axios(
+        `http://localhost:3001/rickandmorty/character/${character}`
+      );
+      if (characters.find((Element) => Element.id === data.id) === undefined) {
+        setCharacters((characters) => [...characters, data]);
+      }else{
+        alert("You have entered a repeated id")
+      }
     } catch (error) {
-      window.alert(error.response.data);
+        alert(error.response.data);
     }
   }
   const random = () => {

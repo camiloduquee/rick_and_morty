@@ -18,8 +18,9 @@ export default function Cards(props) {
                 key={index}
                 id={character.id}
                 name={character.name}
-                species={character.species}
+                status={character.status}
                 gender={character.gender}
+                species={character.species}
                 origin={character.origin}
                 image={character.image}
                 onClose={() => props.onClose(character.id)}

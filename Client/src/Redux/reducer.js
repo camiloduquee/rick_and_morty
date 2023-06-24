@@ -1,4 +1,4 @@
-import { ADD_FAVORITE, DELETE_FAVORITE, FILTER, ORDER } from "./actions-types";
+import { ADD_FAVORITE, DELETE_FAVORITE, FILTER, ORDER, DELETEALL } from "./actions-types";
 
 const initialState = {
   myFavorites: [],
@@ -34,6 +34,11 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         myFavorites: [...state.allCharacters].sort(comparator),
+      };
+    case DELETEALL:
+      return {
+        myFavorites: action.payload,
+        allCharacters: action.payload,
       };
     default:
       return { ...state };

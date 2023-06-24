@@ -27,10 +27,9 @@ userModel(database);
 // ¡Relaciona tus modelos aquí abajo!
 
 const { User, Favorite } = database.models;
-User.belongsToMany(Favorite, { through: "user_favorite" });
-Favorite.belongsToMany(User, { through: "user_favorite" });
+User.belongsToMany(Favorite, { through: "user_favorite", timestamps: false  });
+Favorite.belongsToMany(User, { through: "user_favorite", timestamps: false});
 module.exports = {
-  User,
-  Favorite,
-  conn: database,
+  database,
+  ...database.models
 };
