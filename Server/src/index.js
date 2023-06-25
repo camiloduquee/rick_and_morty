@@ -3,7 +3,7 @@ const { database } = require("./db/DB_connection");
 const express = require("express");
 const server = express();
 const router = require("./routes/index");
-const PORT = 3001;
+require("dotenv").config();
 
 server.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -19,8 +19,8 @@ server.use(express.json());
 server.use("/rickandmorty", router);
 
 database.sync({ alter: true }).then(() => {
-  server.listen(PORT, () => {
-    console.log(`Server raised in port: ${PORT}`);
+  server.listen(process.env.PORT, () => {
+    console.log(`Server raised in port: ${process.env.PORT}`);
   });
 });
 
