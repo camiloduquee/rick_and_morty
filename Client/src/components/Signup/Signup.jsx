@@ -4,7 +4,11 @@ import { useState } from "react";
 import validation from "./Validation";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { BsArrowLeftSquareFill } from "react-icons/bs";
+
+
 const Signup = (props) => {
+const navigate = useNavigate();
   const [userData, setUserData] = useState({
     username: "",
     password: "",
@@ -53,6 +57,9 @@ const Signup = (props) => {
       alert("Debes corregir los errores");
     }
   };
+  const backToLogin = () =>{
+    navigate("/");
+  }
   return (
     <div>
       <form onSubmit={handleSubmit} className={styles.loginBox}>
@@ -100,6 +107,13 @@ const Signup = (props) => {
         <div className={styles.boxbutton}>
           <button type="submit" className={styles.button}>
             Register
+          </button>
+          <button
+            onClick={backToLogin}
+            title={"return to login"}
+            className={styles.buttonThree}
+          >
+            <BsArrowLeftSquareFill />
           </button>
         </div>
       </form>

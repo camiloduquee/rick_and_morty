@@ -29,8 +29,9 @@ function App() {
 
   async function login(userData) {
     const { username, password, type } = userData;
-     try {
-      if (type === "login") {
+
+    if (type === "login") {
+      try {
         const endPoint = "http://localhost:3001/rickandmorty/login";
         const { data } = await axios(
           `${endPoint}?email=${username}&password=${password}`
@@ -42,12 +43,24 @@ function App() {
           setAccess(status);
           access && navigate("/home");
         }
+      } catch (error) {
+        alert(error.response.data);
       }
-      if(type === "register"){
-        
+    }
+
+    if (type === "register") {
+      try {
+        const endPoint = "http://localhost:3001/rickandmorty/login";
+        const email = username;
+        const { data } = await axios.post(endPoint, { email, password });
+        const { id } = data;
+        setKey(id);
+        dispatch(accessKey(id));
+        setAccess(true);
+        navigate("/home");
+      } catch (error) {
+          alert(error.response.data);
       }
-    } catch (error) {
-      alert(error.response.data);
     }
   }
 
