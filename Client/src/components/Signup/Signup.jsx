@@ -74,6 +74,7 @@ const navigate = useNavigate();
             name="username"
             value={userData.username}
             onChange={handleInputChange}
+            autocomplete="off"
           />
           {errors.username && <p className={styles.error}>{errors.username}</p>}
 
@@ -87,6 +88,7 @@ const navigate = useNavigate();
             name="password"
             value={userData.password}
             onChange={handleInputChange}
+            autocomplete="off"
           />
           {errors.password && <p className={styles.error}>{errors.password}</p>}
           <label className={styles.label} htmlFor="passwordTwo">
@@ -99,6 +101,7 @@ const navigate = useNavigate();
             name="passwordTwo"
             value={userData.passwordTwo}
             onChange={handleInputChange}
+            autocomplete="off"
           />
           {errors.passwordTwo && (
             <p className={styles.error}>{errors.passwordTwo}</p>

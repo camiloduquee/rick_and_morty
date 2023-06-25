@@ -4,8 +4,7 @@ import Favorites from "../View/Favorites";
 import styles from "../Fav/Fav.module.css";
 import Star from "../Star/Star";
 import { useDispatch } from "react-redux";
-import { filterCards, orderCards} from "../../Redux/actions.js";
-import { BsFillTrashFill } from "react-icons/bs";
+import { filterCards, orderCards, deleteFavorite} from "../../Redux/actions.js";
 
 const Fav = () => {
   const favorite = useSelector((state) => state.myFavorites);
@@ -18,7 +17,6 @@ const Fav = () => {
   const handleFilter = (event) => {
     dispatch(filterCards(event.target.value));
   };
-
   
   return (
     <>

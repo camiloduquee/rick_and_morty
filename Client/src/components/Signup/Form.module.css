@@ -58,7 +58,7 @@
   grid-column: 3 / 4;
   color: #020019ca;
   font-weight: bold;
-  transform: scale(1);
+  transform: scale(1.1);
   text-transform: uppercase;
   transition: 0.3s;
   background-color: #e3e3e3;
@@ -68,7 +68,7 @@
 }
 
 .button:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
   
 }
 /* -------------Error ---------- */

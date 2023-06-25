@@ -26,7 +26,6 @@ export const addFavorite = (character) => async (dispatch) => {
 };
 export const deleteFavorite = ({id, accesskey}) => {
   
-  console.log(id, accesskey)
   const endpoint = `http://localhost:3001/rickandmorty/fav/${id}/${accesskey}`;
   return (dispatch) => {
     axios.delete(endpoint).then(({ data }) => {

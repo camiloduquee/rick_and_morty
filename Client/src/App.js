@@ -33,16 +33,18 @@ function App() {
     if (type === "login") {
       try {
         const endPoint = "http://localhost:3001/rickandmorty/login";
-        const { data } = await axios(
+        return  await axios(
           `${endPoint}?email=${username}&password=${password}`
-        );
-        const { status, id } = data;
-        if (status) {
-          setKey(id);
-          dispatch(accessKey(id));
-          setAccess(status);
-          access && navigate("/home");
-        }
+        ).then(({ data }) => {
+          const { status, id } = data;
+          if (status) {
+            setKey(id);
+            dispatch(accessKey(id));
+            setAccess(status);
+            navigate("/home");
+          }
+        })
+        
       } catch (error) {
         alert(error.response.data);
       }
@@ -67,6 +69,7 @@ function App() {
   const logout = () => {
     setAccess(false);
     navigate("/");
+    window.location.reload()
   };
 
   useEffect(() => {
