@@ -4,7 +4,7 @@ import Favorites from "../View/Favorites";
 import styles from "../Fav/Fav.module.css";
 import Star from "../Star/Star";
 import { useDispatch } from "react-redux";
-import { filterCards, orderCards, deleteAll } from "../../Redux/actions.js";
+import { filterCards, orderCards} from "../../Redux/actions.js";
 import { BsFillTrashFill } from "react-icons/bs";
 
 const Fav = () => {
@@ -18,9 +18,7 @@ const Fav = () => {
   const handleFilter = (event) => {
     dispatch(filterCards(event.target.value));
   };
-  const deleteAllOn = () => {
-    dispatch(deleteAll())
-  };
+
   
   return (
     <>
@@ -41,15 +39,7 @@ const Fav = () => {
           <option value="Genderless">Genderless</option>
           <option value="unknown">unknown</option>
         </select>
-        <div>
-          <button
-            onClick={deleteAllOn}
-            title={"delete all favorites"}
-            className={styles.button}
-          >
-            <BsFillTrashFill />
-          </button>
-        </div>
+        
       </div>
 
       <div className={styles.box}>

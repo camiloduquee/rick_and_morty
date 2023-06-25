@@ -3,20 +3,18 @@ import styles from "./Form.module.css";
 import { useState } from "react";
 import validation from "./Validation";
 import { useNavigate } from "react-router-dom";
-
-const Form = (props) => {
-  const navigate = useNavigate();
-  function ToSignup () {
-    navigate("/register");
-}
+import axios from "axios";
+const Signup = (props) => {
   const [userData, setUserData] = useState({
     username: "",
     password: "",
+    passwordTwo: "",
     type:"",
   });
   const [errors, setErrors] = useState({
     username: "",
     password: "",
+    passwordTwo: "",
   });
   const handleInputChange = (event) => {
     const property = event.target.name;
@@ -33,18 +31,23 @@ const Form = (props) => {
       })
     );
   };
-  const handleSubmit = (event) => {
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    userData.type = "login";
-    if (!Object.values(errors).length) {
+     userData.type = "register";
+        if (!Object.values(errors).length) {
+        
+    
       props.login(userData);
       setUserData({
         username: "",
         password: "",
+        passwordTwo: "",
       });
       setErrors({
         username: "",
         password: "",
+        passwordTwo: "",
       });
     } else {
       alert("Debes corregir los errores");
@@ -73,23 +76,34 @@ const Form = (props) => {
           <input
             className={styles.input}
             type="password"
-            placeholder="Escribe tu constraseña..."
+            placeholder="Enter your password..."
             name="password"
             value={userData.password}
             onChange={handleInputChange}
           />
           {errors.password && <p className={styles.error}>{errors.password}</p>}
+          <label className={styles.label} htmlFor="passwordTwo">
+            repeat password
+          </label>
+          <input
+            className={styles.input}
+            type="password"
+            placeholder="Re-enter your password..."
+            name="passwordTwo"
+            value={userData.passwordTwo}
+            onChange={handleInputChange}
+          />
+          {errors.passwordTwo && (
+            <p className={styles.error}>{errors.passwordTwo}</p>
+          )}
         </div>
         <div className={styles.boxbutton}>
           <button type="submit" className={styles.button}>
-            Login
-          </button>
-          <button  onClick={ToSignup} className={styles.buttonTwo}>
-            Signup
+            Register
           </button>
         </div>
       </form>
     </div>
   );
 };
-export default Form;
+export default Signup;

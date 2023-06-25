@@ -2,7 +2,7 @@ const { deleteFavorite } = require("../services/services.js");
 
 const deleteFav = async (req, res) => {
   try {
-    const { id, UserId } = req.query;
+    const { id, UserId } = req.params;
     const favDelete = await deleteFavorite({ id, UserId });
     res.status(200).json(favDelete);
   } catch (error) {

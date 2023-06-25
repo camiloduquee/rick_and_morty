@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect} from "react-redux";
 import { addFavorite, deleteFavorite } from "../../Redux/actions";
 import { useState, useEffect } from "react";
+import { BsFillTrashFill } from "react-icons/bs";
 
 export function Card(props) {
   
@@ -12,7 +13,7 @@ export function Card(props) {
   const handleFavorite = () => {
     if (isFav) {
       setIsFav(false);
-      props.deleteFavorite(props.id);
+      props.deleteFavorite(props);
     } else {
       setIsFav(true);
        props.addFavorite(props);
@@ -47,9 +48,13 @@ export function Card(props) {
           </button>
         )}
 
-        <button className={styles.button} onClick={props.onClose}>
-          X
-        </button>
+        <button
+            onClick={props.onClose}
+            title={"delete all favorites"}
+            className={styles.buttonDell}
+          >
+            <BsFillTrashFill />
+          </button>
 
         <div className={styles.title}>
           <Link to={`/detail/${detailId}`} className={styles.noneTitle}>

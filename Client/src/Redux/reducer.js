@@ -3,7 +3,6 @@ import {
   DELETE_FAVORITE,
   FILTER,
   ORDER,
-  DELETEALL,
   ACCESS_KEY,
 } from "./actions-types";
 
@@ -46,13 +45,7 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         accesskey: action.payload,
         };
-    case DELETEALL:
-      return {
-        myFavorites: action.payload,
-        allCharacters: action.payload,
-      };
-    default:
-      return { ...state };
+    
   }
 };
 export default rootReducer;

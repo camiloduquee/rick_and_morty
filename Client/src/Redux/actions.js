@@ -1,4 +1,4 @@
-import { ADD_FAVORITE, DELETE_FAVORITE, FILTER, ORDER, DELETEALL, ACCESS_KEY } from "./actions-types";
+import { ADD_FAVORITE, DELETE_FAVORITE, FILTER, ORDER, ACCESS_KEY } from "./actions-types";
 import axios from "axios";
 
 export const addFavorite = (character) => async (dispatch) => {
@@ -24,8 +24,10 @@ export const addFavorite = (character) => async (dispatch) => {
     alert(error.response.data);
   }
 };
-export const deleteFavorite = (id) => {
-  const endpoint = `http://localhost:3001/rickandmorty/fav/${id}`;
+export const deleteFavorite = ({id, accesskey}) => {
+  
+  console.log(id, accesskey)
+  const endpoint = `http://localhost:3001/rickandmorty/fav/${id}/${accesskey}`;
   return (dispatch) => {
     axios.delete(endpoint).then(({ data }) => {
       return dispatch({
@@ -47,20 +49,10 @@ export const orderCards = (status) => {
     payload: status,
   };
 };
-export const deleteAll = () => {
-  const endpoint = `http://localhost:3001/rickandmorty/fav`;
-  return (dispatch) => {
-    axios.delete(endpoint).then(({ data }) => {
-      return dispatch({
-        type: "DELETEALL",
-        payload: data,
-      });
-    });
-  };
-}
 export const accessKey = (id) => {
   return {
     type: "ACCESS_KEY",
     payload: id,
   }
 }
+

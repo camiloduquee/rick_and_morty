@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import Nav from "./components/Nav/Nav";
 import Error from "./components/Error/Error";
 import Form from "./components/Form/Form";
+import Signup from "./components/Signup/Signup";
 //Import view
 import About from "./components/View/About.jsx";
 import Home from "./components/View/Home.jsx";
@@ -22,21 +23,28 @@ import { deleteFavorite, accessKey } from "./Redux/actions";
 function App() {
   // ----------- accesso -----------//
   const [access, setAccess] = useState(false);
+  const [key, setKey] = useState();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   async function login(userData) {
-    try {
-      const { username, password } = userData;
-      const endPoint = "http://localhost:3001/rickandmorty/login";
-      const { data } = await axios(
-        `${endPoint}?email=${username}&password=${password}`
-      );
-        const {status, id} = data;
-      if (status) {
-        dispatch(accessKey(id));
-        setAccess(status);
-        access && navigate("/home");
+    const { username, password, type } = userData;
+     try {
+      if (type === "login") {
+        const endPoint = "http://localhost:3001/rickandmorty/login";
+        const { data } = await axios(
+          `${endPoint}?email=${username}&password=${password}`
+        );
+        const { status, id } = data;
+        if (status) {
+          setKey(id);
+          dispatch(accessKey(id));
+          setAccess(status);
+          access && navigate("/home");
+        }
+      }
+      if(type === "register"){
+        
       }
     } catch (error) {
       alert(error.response.data);
@@ -44,17 +52,14 @@ function App() {
   }
 
   const logout = () => {
-    setAccess((false));
+    setAccess(false);
     navigate("/");
   };
 
-
-  
   useEffect(() => {
     !access && navigate("/");
   }, [access]);
 
-  
   // Fin de codigo de acceso
 
   const [characters, setCharacters] = useState([]);
@@ -64,7 +69,7 @@ function App() {
     //  Borro un Personaje
     setCharacters(characters.filter((Element) => Element.id !== id));
     //Boro un personaje Favorito
-    dispatch(deleteFavorite(id));
+    dispatch(deleteFavorite(id, key));
   };
 
   async function onSearch(character) {
@@ -87,9 +92,13 @@ function App() {
   };
   return (
     <div
-      className={location.pathname !== "/" ? styles.bodyForm : styles.bodyPage}
+      className={
+        location.pathname !== "/" && location.pathname !== "/register"
+          ? styles.bodyForm
+          : styles.bodyPage
+      }
     >
-      {location.pathname !== "/" && (
+      {location.pathname !== "/" && location.pathname !== "/register" && (
         <Nav onSearch={onSearch} random={random} logout={logout} />
       )}
       <Routes>
@@ -103,6 +112,7 @@ function App() {
         <Route path="/detail/:detailId" element={<Detail />} />
         <Route path="/proyectos" element={<Proyectos />} />
         <Route path="*" element={<Error />} />
+        <Route path="/register" element={<Signup login={login} />} />
       </Routes>
     </div>
   );
