@@ -1,5 +1,4 @@
 // const { conn } = require("./db/DB_connection");
-const fs = require("fs");
 const { database } = require("./db/DB_connection");
 const express = require("express");
 const server = express();
