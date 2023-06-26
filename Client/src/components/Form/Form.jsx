@@ -6,13 +6,13 @@ import { useNavigate } from "react-router-dom";
 
 const Form = (props) => {
   const navigate = useNavigate();
-  function ToSignup () {
+  function ToSignup() {
     navigate("/register");
-}
+  }
   const [userData, setUserData] = useState({
     username: "",
     password: "",
-    type:"",
+    type: "",
   });
   const [errors, setErrors] = useState({
     username: "",
@@ -53,7 +53,10 @@ const Form = (props) => {
   return (
     <div>
       <form onSubmit={handleSubmit} className={styles.loginBox}>
-        <div className={styles.userBox}>
+        <div className={styles.title}>
+          <h1>rick and morty</h1>
+        </div>
+          <div className={styles.userBox}>
           <label className={styles.label} htmlFor="username">
             User
           </label>
@@ -84,7 +87,7 @@ const Form = (props) => {
           <button type="submit" className={styles.button}>
             Login
           </button>
-          <button  onClick={ToSignup} className={styles.buttonTwo}>
+          <button onClick={ToSignup} className={styles.buttonTwo}>
             Signup
           </button>
         </div>

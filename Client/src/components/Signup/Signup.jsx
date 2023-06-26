@@ -63,6 +63,9 @@ const navigate = useNavigate();
   return (
     <div>
       <form onSubmit={handleSubmit} className={styles.loginBox}>
+      <div className={styles.title}>
+          <h1>resgister new account</h1>
+        </div>
         <div className={styles.userBox}>
           <label className={styles.label} htmlFor="username">
             User
@@ -109,7 +112,7 @@ const navigate = useNavigate();
         </div>
         <div className={styles.boxbutton}>
           <button type="submit" className={styles.button}>
-            Register
+            sign in
           </button>
           <button
             onClick={backToLogin}
