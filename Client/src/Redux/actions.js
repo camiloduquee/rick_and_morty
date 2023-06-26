@@ -12,7 +12,7 @@ export const addFavorite = (character) => async (dispatch) => {
     image: character.image,
   };
   
-  const endpoint = "http://localhost:3001/rickandmorty/fav";
+  const endpoint = "/rickandmorty/fav";
   try {
     return await axios.post(endpoint, char).then(({ data }) => {
       return dispatch({
@@ -26,7 +26,7 @@ export const addFavorite = (character) => async (dispatch) => {
 };
 export const deleteFavorite = ({id, accesskey}) => {
   
-  const endpoint = `http://localhost:3001/rickandmorty/fav/${id}/${accesskey}`;
+  const endpoint = `/rickandmorty/fav/${id}/${accesskey}`;
   return (dispatch) => {
     axios.delete(endpoint).then(({ data }) => {
       return dispatch({

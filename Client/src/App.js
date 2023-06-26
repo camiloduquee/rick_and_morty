@@ -20,8 +20,8 @@ import axios from "axios";
 //redux
 import { useDispatch } from "react-redux";
 import { deleteFavorite, accessKey } from "./Redux/actions";
-
-
+const urlServer = "http://rickandmorty-production-c18e.up.railway.app";
+axios.defaults.baseURL = `${urlServer}`;
 
 function App() {
   // ----------- accesso -----------//
@@ -35,8 +35,8 @@ function App() {
 
     if (type === "login") {
       try {
-        const endPoint = "http://localhost:3001/rickandmorty/login";
-        return  await axios(
+        const endPoint = "/rickandmorty/login";
+        return await axios(
           `${endPoint}?email=${username}&password=${password}`
         ).then(({ data }) => {
           const { status, id } = data;
@@ -46,8 +46,7 @@ function App() {
             setAccess(status);
             navigate("/home");
           }
-        })
-        
+        });
       } catch (error) {
         alert(error.response.data);
       }
@@ -55,7 +54,7 @@ function App() {
 
     if (type === "register") {
       try {
-        const endPoint = "http://localhost:3001/rickandmorty/login";
+        const endPoint = "/rickandmorty/login";
         const email = username;
         const { data } = await axios.post(endPoint, { email, password });
         const { id } = data;
@@ -64,7 +63,7 @@ function App() {
         setAccess(true);
         navigate("/home");
       } catch (error) {
-          alert(error.response.data);
+        alert(error.response.data);
       }
     }
   }
@@ -72,7 +71,7 @@ function App() {
   const logout = () => {
     setAccess(false);
     navigate("/");
-    window.location.reload()
+    window.location.reload();
   };
 
   useEffect(() => {
@@ -93,9 +92,7 @@ function App() {
 
   async function onSearch(character) {
     try {
-      const { data } = await axios(
-        `http://localhost:3001/rickandmorty/character/${character}`
-      );
+      const { data } = await axios(`/rickandmorty/character/${character}`);
       if (characters.find((Element) => Element.id === data.id) === undefined) {
         setCharacters((characters) => [...characters, data]);
       } else {

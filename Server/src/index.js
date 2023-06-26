@@ -4,9 +4,9 @@ const express = require("express");
 const server = express();
 const router = require("./routes/index");
 require("dotenv").config();
-
+const endpoint = "https://rick-and-morty-one-green.vercel.app"
 server.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "rick-and-morty-371fbd07r-camiloduquee.vercel.app");
+  res.header("Access-Control-Allow-Origin", `${endpoint}`);
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
     "Access-Control-Allow-Headers",
