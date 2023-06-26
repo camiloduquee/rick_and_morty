@@ -6,7 +6,7 @@ const router = require("./routes/index");
 require("dotenv").config();
 
 server.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Origin", "rick-and-morty-371fbd07r-camiloduquee.vercel.app");
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
     "Access-Control-Allow-Headers",
