@@ -50,7 +50,7 @@ export const orderCards = (status) => {
 };
 export const accessKey = (id) => {
   return {
-    type: "ACCESS_KEY",
+    type: ACCESS_KEY,
     payload: id,
   }
 }
