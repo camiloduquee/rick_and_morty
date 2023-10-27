@@ -12,7 +12,15 @@ const userModel = require("./models/User");
 
 const database = new Sequelize(
   `postgres://${PGUSER}:${PGPASSWORD}@${PGHOST}/${PGDATABASE}`,
-  { logging: false, native: false }
+  { 
+    logging: false, 
+    native: false,
+    dialectOptions: {
+      ssl: {
+        require: true, // Habilita SSL
+      },
+    },
+  }
 );
 
 // EJERCICIO 05
