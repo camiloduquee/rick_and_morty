@@ -1,4 +1,3 @@
-// const { conn } = require("./db/DB_connection");
 const { database } = require("./db/DB_connection");
 const express = require("express");
 const server = express();
