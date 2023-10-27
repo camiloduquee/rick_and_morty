@@ -20,7 +20,7 @@ import axios from "axios";
 //redux
 import { useDispatch } from "react-redux";
 import { deleteFavorite, accessKey } from "./Redux/actions";
-const urlServer = "https://rickandmorty-production-c18e.up.railway.app/";
+const urlServer = "https://back-rickandmorty-5poe.onrender.com/";
 axios.defaults.baseURL = `${urlServer}`;
 
 function App() {

@@ -11,7 +11,7 @@ const DetailId = () => {
   //Este código es el que buscará al personaje de la API cada vez que el componente se monte. Y luego, cada vez que se desmonte, borrará su información.
 
   useEffect(() => {
-    fetch(`http://localhost:3001/rickandmorty/character/${detailId}`)
+    fetch(`https://back-rickandmorty-5poe.onrender.com/rickandmorty/character/${detailId}`)
       .then((response) => response.json())
       .then((char) => {
         if (char.name) {
