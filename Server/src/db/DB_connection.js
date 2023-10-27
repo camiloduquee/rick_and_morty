@@ -1,5 +1,5 @@
 require("dotenv").config();
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, BDD } = process.env;
+const { PGUSER, PGPASSWORD, PGHOST, PGPORT, PGDATABASE } = process.env;
 const { Sequelize } = require("sequelize");
 
 const favoriteModel = require("./models/Favorite");
@@ -11,7 +11,7 @@ const userModel = require("./models/User");
 // URL ----> postgres://DB_USER:DB_PASSWORD@DB_HOST/rickandmorty
 
 const database = new Sequelize(
-  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${BDD}`,
+  `postgres://${PGUSER}:${PGPASSWORD}@${PGHOST}/${PGDATABASE}`,
   { logging: false, native: false }
 );
 
